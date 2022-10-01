@@ -2,6 +2,7 @@
 
 @section('title','Cursos create')
 
+<link href="css/estilos.css" rel="stylesheet">
 
 @section('content')
     <h1>En esta página pódras crear un curso</h1>

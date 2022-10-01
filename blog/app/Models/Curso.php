@@ -9,7 +9,13 @@ class Curso extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     protected $table = "cursos";
-    
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
 }

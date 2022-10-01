@@ -1,6 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('title','Cursos Editar')
+<link href="css/estilos.css" rel="stylesheet">
 
 @section('content')
     <h1>En esta página pódras editar un curso</h1>

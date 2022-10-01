@@ -3,6 +3,8 @@
 use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactanosController;
+
 
 
 /*
@@ -17,7 +19,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 //Route::controller(CursoController::class)->group(function () {
 
@@ -25,7 +27,7 @@ Route::get('/', HomeController::class);
     //La forma que esta arriba es lo mismo que el de abajo
     //La diferencia es que el de arriba se enmarca dentro de group
     //El de abajo se hace de manera mas libre se pone fuera de controller group una por una
-   /*Route::get('cursos', [CursoController::class, 'index']);*/
+   //Route::get('cursos', [CursoController::class, 'index'])->name('cursos.index');
 
     //Route::get('cursos/create','create')->name('cursos.create');
     /*Route::get('crear-curso', [CursoController::class, 'create']);*/
@@ -49,6 +51,20 @@ Route::get('/', HomeController::class);
 
     //CAMBIAR NOMBRE DE URL CUANDO YA NO SE QUIERE 'cursos', para no cambiar palabra por palabra esta la opcion de abajo
     //Route::resource('asignaturas', CursoController::class)->parameters(['asignaturas' => 'curso'])->names('cursos');
+
+    //Para cuando se requiere una vista estatica
+    Route::view('nosotros','nosotros')->name('nosotros');
+
+    Route::view('login','login')->name('login');
+
+    Route::view('menu', 'menu')->name('menu');
+
+    Route::view('registro','registro')->name('registro');
+
+    //Emails
+    Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
+
+    Route::post('contactanos', [ContactanosController::class , 'store'])->name('contactanos.store');
 
 /*
 Route::get('cursos/create', function () {

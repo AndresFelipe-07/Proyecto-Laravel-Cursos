@@ -1,6 +1,7 @@
 @extends('layouts.plantilla')
 
 @section('title','Cursos '. $curso->name)
+<link href="css/estilos.css" rel="stylesheet">
 
 @section('content')
     {{--<h1>Bienvenido al curso: <?php echo $curso;?></h1>se puede hacer asi con echo o como abajo--}}

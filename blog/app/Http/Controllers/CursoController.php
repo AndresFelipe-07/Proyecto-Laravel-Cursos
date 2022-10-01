@@ -14,6 +14,7 @@ class CursoController extends Controller
         $cursos = Curso::orderBy('id', 'desc')->paginate();
 
         return view('cursos.index', compact('cursos'));
+
     }
     public function create()
     {
@@ -27,6 +28,7 @@ class CursoController extends Controller
         $curso = new Curso();
 
         $curso->name = $request->name;
+        $curso-> slug = $request->name;
         $curso->descripcion = $request->descripcion;
         $curso->categoria = $request->categoria;
 
